@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="Credits"
+		backgroundColor="#da0909" >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Image x="322" y="86" width="376" height="345" source="assets/Splash Screen1(1).png"/>
+	<s:Button x="772" y="395" width="143" height="113" label="Main Menu" chromeColor="#faf7f7" click="navigator.pushView(MathCatHomeView)"/>
+</s:View>

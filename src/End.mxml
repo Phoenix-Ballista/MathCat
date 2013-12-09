@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="End">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Image id="I1" x="10" y="-12" width="1011" height="580" source="assets/End Screen1.png"/>
+	<s:Button id="B1" x="769" y="298" width="152" height="101" label="Play Again!" chromeColor="#9befec" click="navigator.pushView(MathCatHomeView)"/>
+</s:View>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="LevelThree3">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Image x="0" y="-2" width="1024" height="557" source="assets/Level 3 background 2(1).png"/>
+	<s:Button id="B1" x="542" y="265" width="140" height="80" label="Main Menu" chromeColor="#307da7e" click="navigator.pushView(MathCatHomeView)"/>
+	<s:Button id="B2" x="542" y="366" width="140" height="82" label="Next Question" chromeColor="#07da7e" click="navigator.pushView(End)"/>
+	<s:Button id="B6" x="78" y="197" width="114" height="94" label="Button" chromeColor="#8cecc4"
+			  icon="assets/Level 3 button 1.png"/>
+	<s:Button id="B5" x="241" y="197" width="114" height="94" label="Button" chromeColor="#8cecc4"
+			  icon="assets/Level 3 button 3.png"/>
+	<s:Button id="B7" x="241" y="318" width="114" height="94" label="Button" chromeColor="#8cecc4"
+			  icon="assets/Level 3 button 4.png"/>
+	<s:Button id="B4" x="78" y="318" width="114" height="94" label="Button" chromeColor="#8cecc4"
+			  icon="assets/Level 3 button 2.png"/>
+	<s:Label id="L1" x="341" y="9" width="307" height="46" fontSize="36" text="Question"
+			 textAlign="center" verticalAlign="middle"/>
+</s:View>
