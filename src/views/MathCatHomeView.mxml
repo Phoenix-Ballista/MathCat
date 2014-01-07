@@ -14,4 +14,5 @@
 	<s:Button id="B2" x="276" y="10" width="264" height="90" label="Instructions" chromeColor="#ca0707" click="navigator.pushView(Instructions)"/>
 	<s:Button id="B3" x="784" y="11" width="236" height="88" label="Shop" chromeColor="#067c22" click="navigator.pushView(Shop)"/>
 	<s:Button id="B4" x="548" y="10" width="228" height="89" label="Credits" chromeColor="#6e08bd" click="navigator.pushView(Credits)"/>
+	<s:Label id="L1" x="901" y="472" text="Points" initialize="L1.text='Points: '+String(parentApplication.Cpoints)"/>
 </s:View>

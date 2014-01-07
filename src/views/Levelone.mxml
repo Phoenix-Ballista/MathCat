@@ -7,12 +7,21 @@
 	</fx:Declarations>
 	<fx:Script>
 		<![CDATA[
-			private function A():void{
-			
+			private function checkanswer(button:Button):void{
+				switch (button.label)
+				{
+					case '10':
+						correct.visible=true;
+						parentApplication.Cpoints+=10;
+						L1.text='Points: '+String(parentApplication.Cpoints);
+						break;
+					default:
+						break;
+				}
 			}
 		]]>
 	</fx:Script>
-	<s:Image x="0" y="0" width="1024" height="555" source="assets/Level 1 Background3.png"/>
+	<s:Image x="0" y="0" width="1024" height="547" source="assets/Level 1 Background3.png"/>
 	<s:Button id="B1" x="586" y="228" width="152" height="81" label="Main Menu" chromeColor="#13d0ec"
 			  click="navigator.pushView(MathCatHomeView)" fontSize="18"/>
 	<s:Button id="B2" x="586" y="332" width="151" height="84" label="Next question" fontSize="18" chromeColor="#13d0ec" click="navigator.pushView(LevelOne2)"/>
@@ -20,14 +29,16 @@
 			 text="8+2=?" textAlign="center" verticalAlign="middle"/>
 	<s:Group x="10" y="131" width="556" height="307">
 		<s:Image id="I3" x="15" y="10" width="265" height="138" source="assets/Fish5.png"/>
-		<s:Button id="B3" x="64" y="24" width="171" height="124" label="15" fontSize="36" alpha="0.6" chromeColor="#0848bc"/>
+		<s:Button id="B3" x="64" y="24" width="171" height="124" label="15" fontSize="36" alpha="0.6" chromeColor="#0848bc" click="checkanswer(B3)"/>
 		<s:Image id="I4" x="291" y="10" width="265" height="138" source="assets/Fish5.png"/>
 		<s:Button id="B4" x="343" y="24" width="171" height="124" label="10" alpha="0.6"
-				  chromeColor="#0848bc" fontFamily="Arial" fontSize="36" />
+				  chromeColor="#0848bc" fontFamily="Arial" fontSize="36" click="checkanswer(B4)" />
 		<s:Image id="I5" x="15" y="160" width="265" height="138" source="assets/Fish5.png"/>
 		<s:Button id="B5" x="64" y="173" width="171" height="124" label="9" alpha="0.6"
-				  chromeColor="#0848bc" fontSize="36" lineThrough="false"/>
+				  chromeColor="#0848bc" fontSize="36" lineThrough="false" click="checkanswer(B5)"/>
 		<s:Image id="I6" x="291" y="156" width="265" height="138" source="assets/Fish5.png"/>
-		<s:Button id="B6" x="343" y="173" width="171" height="124" label="11" fontSize="36" alpha="0.6" chromeColor="#0848bc"/>
+		<s:Button id="B6" x="343" y="173" width="171" height="124" label="11" fontSize="36" alpha="0.6" chromeColor="#0848bc" click="checkanswer(B6)"/>
 	</s:Group>
+	<s:Label id="correct" x="602" y="106" color="#14BD1C" text="Correct!&#xd;+10 Points!" textAlign="left" visible="false"/>
+	<s:Label id="L1" x="53" y="10" text="Points" initialize="L1.text='Points: '+String(parentApplication.Cpoints)"/>
 </s:View>

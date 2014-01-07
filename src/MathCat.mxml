@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:ViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
-							xmlns:s="library://ns.adobe.com/flex/spark" firstView="MathCatHomeView" applicationDPI="160">
+							xmlns:s="library://ns.adobe.com/flex/spark" firstView="views.MathCatHomeView" applicationDPI="160">
 	<fx:Style source="MathCat.css"/>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			public var Cpoints:Number=0;
+		]]>
+	</fx:Script>
 </s:ViewNavigatorApplication>
