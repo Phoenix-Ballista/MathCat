@@ -5,6 +5,13 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			private function A():void{
+			
+			}
+		]]>
+	</fx:Script>
 	<s:Image x="0" y="0" width="1024" height="555" source="assets/Level 1 Background3.png"/>
 	<s:Button id="B1" x="586" y="228" width="152" height="81" label="Main Menu" chromeColor="#13d0ec"
 			  click="navigator.pushView(MathCatHomeView)" fontSize="18"/>
