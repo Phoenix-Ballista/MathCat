@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="GameOver">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Image id="I1" x="0" y="0" source="assets/Game over 1.png"/>
+	<s:Button id="B1" x="653" y="301" width="170" height="84" label="Play Again!" chromeColor="#f30b0b" click="navigator.pushView(levelone)"/>
+	<s:Button id="B2" x="653" y="404" width="170" height="81" label="Main Menu " chromeColor="#f30b0b" click="navigator.pushView(MathCatHomeView)"/>
+</s:View>

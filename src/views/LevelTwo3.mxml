@@ -4,17 +4,21 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:Image x="0" y="0" width="1024" height="555" source="assets/Level2backround2.png"/>
+	<s:Image id="I1" x="0" y="-25" source="assets/Level2backround2.png"/>
 	<s:Button id="B1" x="531" y="330" width="129" height="69" label="Main Menu" chromeColor="#74d808" click="navigator.pushView(MathCatHomeView)"/>
-	<s:Button id="B2" x="531" y="417" width="129" height="67" label="Next Question" chromeColor="#74d808" click="navigator.pushView(LevelThree)"/>
-	<s:Button id="B3" x="67" y="340" width="128" height="108" label="Button"
-			  icon="assets/Flower1.png"/>
-	<s:Button id="B4" x="233" y="340" width="128" height="108" label="Button"
-			  icon="assets/Flower1.png"/>
-	<s:Button id="B5" x="67" y="210" width="128" height="105" label="Button"
-			  icon="assets/Flower2.png" chromeColor="#83dce4"/>
-	<s:Button id="B6" x="228" y="212" width="128" height="105" label="Button"
-			  icon="assets/Flower2.png" chromeColor="#83dce4"/>
-	<s:Label id="L1" x="322" y="31" width="302" height="29" fontSize="36" text="15-7=?"
+	<s:Button id="B2" x="531" y="417" width="129" height="67" label="Next Question" chromeColor="#74d808" click="navigator.pushView(LevelTwo4)"/>
+	<s:Image id="I3" x="82" y="340" width="113" height="94" source="assets/Flower1.png"/>
+	<s:Image id="I4" x="245" y="341" width="113" height="94" source="assets/Flower1.png"/>
+	<s:Image id="I5" x="245" y="209" width="113" height="94" source="assets/Flower2.png"/>
+	<s:Image id="I6" x="82" y="214" width="113" height="94" source="assets/Flower2.png"/>
+	<s:Button id="B3" x="82" y="341" width="128" height="108" label="30" chromeColor="#069f11"
+			  fontSize="36" alpha="0.5" />
+	<s:Button id="B4" x="245" y="341" width="128" height="108" label="33" chromeColor="#069f11"
+			  fontSize="36" alpha="0.6"/>
+	<s:Button id="B5" x="82" y="209" width="128" height="105" label="29" chromeColor="#83dce4"
+			  fontSize="36" alpha="0.6"/>
+	<s:Button id="B6" x="245" y="209" width="128" height="105" label="31" chromeColor="#83dce4"
+			  fontSize="36" alpha="0.6"/>
+	<s:Label id="L1" x="365" y="32" width="302" height="29" fontSize="36" text="27+4=?"
 			 textAlign="center" verticalAlign="middle"/>
 </s:View>
