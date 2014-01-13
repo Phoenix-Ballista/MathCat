@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="LevelOneTrain" creationComplete="ShortTimer()">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import flash.events.TimerEvent;
+			import flash.utils.Timer
+				
+				private var delay:Number=5000;
+			private var BTimer:Timer;
+			
+			public function start():void{
+				ShortTimer();
+			}
+			
+			public function change(event:TimerEvent):void{
+				navigator.pushView(LevelTwo) 
+			}
+			
+			public function ShortTimer():void
+			{
+				
+				/*    creates a new Timer. The delay parameter is an integer that set number of milliseconds (1/1000s of a seconds) bewteen
+				the events. The second parameter sets how many times the event is called -- 0 means that it will loop infinately. Any other
+				integer can be used - even a variable.*/
+				BTimer = new Timer(delay, 1);
+				
+				/*     designates listeners for the interval and completion events- Connects the timer event with the function to be called
+				when the Timer is set off.*/    
+				BTimer.addEventListener(TimerEvent.TIMER, change);
+				//minuteTimer.addEventListener(TimerEvent.TIMER_COMPLETE, onTimerComplete);
+				
+				// starts the timer ticking.  This timer can be stopped with the command BTimer.stop();
+				BTimer.start();
+			}	
+		]]>
+	</fx:Script>
+	<s:Image id="I1" x="2" y="0" height="555" scaleMode="stretch" source="assets/Level 2 Train.png"/>
+</s:View>

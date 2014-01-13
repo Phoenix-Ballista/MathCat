@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="LevelOne3">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			private var answered:Boolean=false;
+			private function checkbutton(button:Button):void{
+				switch (button.id)
+				{
+					case 'B3':
+						if (!answered)
+						{
+							correct.text="Correct!\n+5 Stars!"
+							parentApplication.star+=5;
+							L1.text='Stars: '+String(parentApplication.star);
+							answered=true;
+						}
+						break;
+					case 'B2':
+						if (answered==true)
+							navigator.pushView(LevelOne6);
+						else
+							if (!answered)
+							{
+								wrong.text="Skipped question.\n-1 Health";
+								parentApplication.health-=1;
+								health.text='Health: '+String(parentApplication.health);
+								answered=true;
+								if (parentApplication.health<=0)
+									navigator.pushView(GameOver);
+							}
+						break;
+					case 'B7':
+						if (parentApplication.medicine>0)
+						{
+							parentApplication.medicine-=1;
+							B7.label='Medicine: '+String(parentApplication.medicine);
+							parentApplication.health+=1;
+							health.text='Health: '+String(parentApplication.health);
+						}
+						break;
+					case 'B8':
+						if (parentApplication.strawberry>0 && !answered)
+						{
+							parentApplication.strawberry-=1;
+							B8.label='Strawberry: '+String(parentApplication.strawberry);
+							correct.text="Go straight to the next question!";
+							answered=true;
+						}
+						break;
+					default:
+						if (!answered)
+						{
+							wrong.text="Incorrect.\n-1 Health";
+							parentApplication.health-=1;
+							health.text='Health: '+String(parentApplication.health);
+							answered=true;
+							if (parentApplication.health<=0)
+								navigator.pushView(GameOver);
+						}
+						break;
+				}
+			}
+		]]>
+	</fx:Script>
+	<s:Image id="I1" x="0" y="-30" source="assets/Level 1 Background3.png"/>
+	<s:Button id="B1" x="586" y="228" width="152" height="81" label="Main Menu" chromeColor="#13d0ec"
+			  click="navigator.pushView(MathCatHomeView)" fontSize="18"/>
+	<s:Button id="B2" x="586" y="332" width="151" height="84" label="Next question" fontSize="18" chromeColor="#13d0ec" click="checkbutton(B2)"/>
+	<s:Label x="351" y="44" width="294" height="40" backgroundColor="#3641d0" fontSize="36"
+			 text="20+8=?" textAlign="center" verticalAlign="bottom"/>
+	<s:Group x="10" y="131" width="556" height="307">
+		<s:Image id="I3" x="15" y="10" width="265" height="138" source="assets/Fish5.png"/>
+		<s:Button id="B3" x="64" y="24" width="171" height="124" label="28" fontSize="36" alpha="0.6" chromeColor="#0848bc" click="checkbutton(B3)"/>
+		<s:Image id="I4" x="291" y="10" width="265" height="138" source="assets/Fish5.png"/>
+		<s:Button id="B4" x="343" y="24" width="171" height="124" label="25" alpha="0.6"
+				  chromeColor="#0848bc" fontFamily="Arial" fontSize="36" click="checkbutton(B4)" />
+		<s:Image id="I5" x="15" y="160" width="265" height="138" source="assets/Fish5.png"/>
+		<s:Button id="B5" x="64" y="173" width="171" height="124" label="12" alpha="0.6"
+				  chromeColor="#0848bc" fontSize="36" lineThrough="false" click="checkbutton(B5)"/>
+		<s:Image id="I6" x="291" y="156" width="265" height="138" source="assets/Fish5.png"/>
+		<s:Button id="B6" x="343" y="173" width="171" height="124" label="208" fontSize="36" alpha="0.6" chromeColor="#0848bc" click="checkbutton(B6)"/>
+	</s:Group>
+	
+	<s:Label id="correct" x="602" y="150" color="#14BD1C" text="" textAlign="left" />
+	<s:Label id="L1" x="514" y="451" text="Points" initialize="L1.text='Stars: '+String(parentApplication.star)"/>
+	<s:Label id="wrong" x="602" y="146" color="#ED1111"/>
+	<s:Label id="health" x="53" y="69" text="Health" initialize="health.text='Health: '+String(parentApplication.health)"/>
+	<s:Button id="B7" x="800" y="12" label="Medicine" click="checkbutton(B7)" initialize="B7.label='Medicine: '+String(parentApplication.medicine)"/>
+	<s:Button id="B8" x="799" y="76" label="Strawberry" click="checkbutton(B8)" initialize="B8.label='Strawberry: '+String(parentApplication.strawberry)"/>
+</s:View>

@@ -4,9 +4,44 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			private function buy(item:String):void
+			{
+				switch (item)
+				{
+					case "medicine":
+						if(parentApplication.star>=10)
+						{
+							parentApplication.medicine+=1;
+							parentApplication.star-=10;
+						}
+						break;
+					case "strawberry":
+						if(parentApplication.star>=50)
+						{
+							parentApplication.strawberry+=1;
+							parentApplication.star-=50;
+						}
+						break;
+					case "shoe":
+						if(parentApplication.star>=80)
+						{
+							parentApplication.shoe+=1;
+							parentApplication.star-=80;
+						}
+						break;
+					default:
+						break;
+				}
+				L1.text='Stars: '+String(parentApplication.star)+'     Medicine: '+parentApplication.medicine+'     Strawberries: '+parentApplication.strawberry+'     Shoes: '+parentApplication.shoe;
+			}
+		]]>
+	</fx:Script>
 	<s:Image x="0" y="0" width="1024" source="assets/Shop1.png"/>
-	<s:Button id="B1" x="21" y="378" width="201" height="78" label="Buy for 10 points!"/>
-	<s:Button id="B2" x="336" y="378" width="231" height="78" label="Buy for 50 points!"/>
-	<s:Button id="B3" x="673" y="378" width="247" height="79" label="Buy for 80 points!"/>
+	<s:Button id="B1" x="21" y="378" width="201" height="78" label="Buy for 10 stars!" click="buy('medicine')"/>
+	<s:Button id="B2" x="336" y="378" width="231" height="78" label="Buy for 50 stars!" click="buy('strawberry')"/>
+	<s:Button id="B3" x="673" y="378" width="247" height="79" label="Buy for 80 stars!" click="buy('shoe')"/>
 	<s:Button id="B4" x="792" y="28" width="176" height="67" label="Main Menu" click="navigator.pushView(MathCatHomeView)"/>
+	<s:Label id="L1" x="10" y="28" text="Points" initialize="L1.text='Stars: '+String(parentApplication.star)+'     Medicine:'+parentApplication.medicine+'     Strawberries:'+parentApplication.strawberry+'     Shoes:'+parentApplication.shoe"/>
 </s:View>

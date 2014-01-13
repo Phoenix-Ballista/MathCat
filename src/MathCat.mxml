@@ -7,7 +7,11 @@
 	</fx:Declarations>
 	<fx:Script>
 		<![CDATA[
-			public var Cpoints:Number=0;
+			public var star:Number=0;
+			public var shoe:Number=0;
+			public var strawberry:Number=0;
+			public var medicine:Number=0;
+			public var health:Number=5;
 		]]>
 	</fx:Script>
 </s:ViewNavigatorApplication>
